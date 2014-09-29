@@ -1,0 +1,20 @@
+#container{
+    /*width:400px;
+    height:400px;*//*如果div有实际宽高，也可以激发layout*/
+    border:10px solid pink;
+    background-color:#ccc;
+    position:relative;/*如果为absolute,同样可以激发layout*/
+    padding:10px;
+    margin:100px;
+    /*zoom:1*//*IE6 下需触发layout，避免导致tag的定位不以container的padding-edge做参照*/
+}
+#tag{
+    position:absolute;
+    width:150px;
+    height:166px;
+    background:url(/images/tag.gif) 0 0 no-repeat;
+    background-color:yellow;
+    top:0px;
+    left:0px;
+}
+

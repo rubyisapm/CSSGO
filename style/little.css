@@ -1,0 +1,55 @@
+/*a{
+    text-decoration:none
+}
+img{
+    border:none
+}
+.vertical-middle{
+    height:24px;
+    line-height:24px;
+    vertical-align:middle;
+    border:1px solid #ccc;
+    display:table-cell;
+}
+.vertical-middle span{
+    display:inline-block;
+}
+.vertical-middle a{
+    display:inline-block;
+}
+.vertical-middle a img{
+    vertical-align:-2px;
+}*/
+a{
+    text-decoration:none
+    /*margin:0;*//*IE8+\chrome\ff 有默认右边距*/
+}
+img{
+    border:none
+}
+.vertical-middle{
+    height:24px;
+    line-height:24px;
+    vertical-align:middle;
+    border:1px solid #ccc;
+}
+.vertical-middle a{
+    *display:inline-block;
+    margin-right:5px;
+    /**zoom:1;*/
+}
+.vertical-middle span{
+    *display:inline-block;
+    /**zoom:1;*/
+    /*父元素使用vertical-align:middle时，子元素一般需为inline-block,可以显式设置display，如果如该例为行内元素，那么设置zoom将使其的表现和inline-block相似*/
+}
+.vertical-middle a img{
+    vertical-align:-2px;
+    _vertical-align:-5px;
+}
+#blueRect{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    background-color:yellow
+}
