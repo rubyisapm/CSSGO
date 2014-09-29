@@ -1,0 +1,81 @@
+.mb10{
+    margin-bottom:10px
+}
+.w160{
+    width:160px
+}
+ul,li{
+    padding:0;
+    margin:0
+}
+li{
+    list-style:none
+}
+p{
+    margin:0;
+    padding:0;
+}
+textarea{
+    margin:0;
+    padding:0;
+}
+.f14{
+    font-size:14px
+}
+input{
+    padding:0;/*text默认有1px的padding*/
+}
+select{
+    margin:0;
+}
+.formList .text,.formList textarea{
+    border-width:1px;
+    border-style:solid;
+    border-color:#b5b5b5;
+}
+.formList .text{
+    height:24px;
+    line-height:24px
+}
+.formList select{
+    height:24px;
+    border-width:1px;
+    border-style:solid;
+    border-color:#b5b5b5;
+}
+.formList .list{
+    padding-left:105px;
+}
+.formList .label{
+    width:100px;
+    text-align:right;
+    height:26px;
+    line-height:26px;
+    margin-left:-100px;
+    display:inline-block;
+    float:left
+}
+.formList .content{
+    display:inline;
+}
+.formList .focus{
+    border-color:#2549ff;
+    box-shadow: 0 0 3px #7e93ff
+}
+.formList .error{
+    border-color:#ff3526
+}
+.note{
+    margin-top:8px;
+    font-size:12px;
+}
+.note b{
+    position:absolute;
+    width:21px;
+    height:20px;
+    background-image:url(/images/note.png);
+    background-repeat:no-repeat;
+}
+.note_error{
+    background-position:
+}
