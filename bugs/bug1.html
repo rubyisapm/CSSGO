@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css" rel="stylesheet">
+        #wrap{
+            width:100px;
+            height:100px;
+            padding-left:100px
+        }
+        #left{
+            width: 100px;
+            height: 100px;
+            background: purple;
+            float: left;
+            margin-left: -100px;
+            position: relative;/*IE6! doesn't support negative margin!*/
+            _margin-left: -50px;/*IE6! double margin bug! If the float direction is same as the margin*/
+        }
+        #right{
+            width: 100px;
+            height: 100px;
+            background: green;
+            _float: left;/*IE6! 3px bug! If a float element is followed by another non-float element*/
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+
+</body>
+</html>
