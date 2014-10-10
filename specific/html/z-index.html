@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/specific/style/public.css"></link>
+    <link type="text/css" rel="stylesheet" href="/specific/style/z-index.css"></link>
+</head>
+<body>
+    <p class="example">example1:同一容器中的relative元素、absolute元素和正常元素的z-index排列顺序</p>
+    <p class="subExample">example1_1</p>
+    <div class="wrap">
+        <div class="base">
+            <div class="one">absolute</div>
+            <div class="two">relative</div>
+            <div class="three">relative</div>
+            <div class="four">non-positioned</div>
+        </div>
+    </div>
+    <p class="summary">
+        1、从玫红色和紫色框来看(position:relative)不会脱离标准流<br/>
+        2、而粉色框(position:absolute)脱离了标准流<br/>
+        3、定位元素没有设置z-index情况下，和z-index:0表现一样。而且呈现出来的情况是后来者居上.事实上，当我们将内部的这些元素统一加上z-index:0，它们的顺序依旧奉行后来居上的原则<br/>
+        4、在定位元素和非定位元素间比较时，定位元素在非定位元素上方<br/>
+        5、个人的见解：所谓没有脱离流，就是在流中占据着位置，以至于周边元素无法忽视它的存在。而像absolute元素这种脱离流的元素，只是根据top left这种属性“贴”在某个地方，周围的元素不用为它腾地方。
+    </p>
+    <!--example2-1-->
+    <p class="example">example2:相邻两个定位元素及其内部定位元素的z-index排列顺序</p>
+    <p class="subExample">example2_1</p>
+    <div id="example2_1">
+        <div class="con1">
+            relative
+            <div class="incon1">
+                relative
+                <div class="sprite1">absolute</div>
+            </div>
+        </div>
+        <div class="con2">
+            relative
+            <div class="sprite2">absolute</div>
+        </div>
+    </div>
+
+    <!--example2-2-->
+    <p class="subExample">example2_2</p>
+    <div id="example2_2">
+        <div class="con1">
+            relative
+            <div class="incon1">
+                relative
+                <div class="sprite1">absolute</div>
+            </div>
+        </div>
+        <div class="con2">
+            relative
+            <div class="sprite2">absolute</div>
+        </div>
+    </div>
+
+    <!--example2-2-->
+    <p class="subExample">example2_3</p>
+    <div id="example2_3">
+        <div class="con1">
+            relative
+            <div class="incon1">
+                relative
+                <div class="sprite1">absolute</div>
+            </div>
+        </div>
+        <div class="con2">
+            relative
+            <div class="sprite2">absolute</div>
+        </div>
+    </div>
+    <p class="summary">
+        1、除了IE6/7的其他浏览器中，当父元素没有设置z-index时，内部的absolute元素将自食其力，能者就上了！<br/>
+            但在IE6/7下，这种情况的博弈是要拼爹的，也就是说如果元素的最外部的relative元素设置的z-index较大，那么子元素也将被提高(2_1)<br/>
+        2、当两个外层元素的z-index统一被设置为z-index:0时，那么所有浏览器表现将按照IE6/7下没有设置该属性时的情况展示。(2_2)<br/>
+            我们可以这么说，在IE6/7的浏览器中，如果是两个独立的定位元素，那么他们的z-index将被当做0处理，<br/>
+            而在其他浏览器中，当检测到外层定位元素含有z-index属性，那么即使内部元素有再高的z-index也无法超越后来者<br/>
+        3、当z-index故意错乱的情况下，所有浏览器都会检测外层定位元素，当外层元素已经输了的时候，内层的absolute再高也是徒劳。(2_3)<br/>
+    </p>
+
+    <!--example3-->
+    <p class="example">example3:定位元素与周围普通元素间的z-index上下关系</p>
+    <p class="subExample">example3_1</p>
+    <div id="example3_1">
+        <div class="parent">
+            relative
+            <div class="son">absolute</div>
+        </div>
+        <div class="around">non-positioned</div>
+    </div>
+    <p class="subExample">example3_2</p>
+    <div id="example3_2">
+        <div class="parent">
+            relative
+            <div class="son">absolute</div>
+        </div>
+        <div class="around">non-positioned</div>
+    </div>
+    <p class="subExample">example3_3</p>
+    <div id="example3_3">
+        <div class="parent">
+            relative
+            <div class="son">absolute</div>
+        </div>
+        <div class="around">non-positioned</div>
+    </div>
+    <p class="summary">
+        1、当定位元素遭遇正常元素，如果没有设置任何z-index,那么依照定位元素比普通元素靠上的准则。<br/>
+        2、如果设置了任何的z-index,依然遵照父元素决定一切的原则。<br/>
+        3、当外层定位元素的z-index<0时，就算内部absolute元素z-index>0,该子元素也只能排在正常元素下方(3_2)<br/>
+        4、当外层定位元素的z-index>0时，尽管内部absolute元素z-index<0，该子元素也照样可以呈现在正常元素前(3_3)<br/>
+    </p>
+    <p class="example">example4:定位元素与周围普通元素间的z-index上下关系</p>
+    <p class="subExample">example4_1</p>
+    <div class="fixed">
+    </div>
+    <div class="assist1"></div>
+    <div class="assist2"></div>
+    <div class="assist3"></div>
+    <p class="summary">
+        1、首先，其中一个小失误值得一提：当position设置为fixed时，如果不指定top/bottom和left/right属性或不指定top/bottom属性，那么该元素将不会呈现。
+        也就是说top/bottom才是重头，left/right抛去设计需求不指定也没关系<br/>
+        2、和relative/absolute定位元素一样，没设置z-index时，会将其看为z-index:0来和其他的元素对比，当然，它也是在正常元素上方的。<br/>
+        ps:这里结论皆除去IE6，因为这货不支持fixed。验证上面所提的话，请将该元素设置为left:0看它如果穿过其他元素^ _ ^ ~
+    </p>
+<div style="height:500px"></div>
+</body>
+</html>

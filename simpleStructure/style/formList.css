@@ -73,7 +73,7 @@ select{
     position:absolute;
     width:21px;
     height:20px;
-    background-image:url(/images/note.png);
+    background-image:url(/simpleStructure/images/note.png);
     background-repeat:no-repeat;
 }
 .note_error{

@@ -1,0 +1,19 @@
+.example{
+    border-bottom:2px solid blueviolet;
+    height:30px;
+    width:600px;
+    color:purple;
+    font:14px/30px 'microsoft yahei'
+}
+.subExample{
+    border-left:5px solid salmon;
+    font:14px/24px bold 'microsoft yahei';
+    text-indent:5px;
+    color:salmon
+}
+.summary{
+    background: #F2F2F2;
+    font: 14px/30px 'microsoft yahei';
+    width: 900px;
+    padding-left:10px
+}

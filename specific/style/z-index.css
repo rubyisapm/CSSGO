@@ -1,0 +1,165 @@
+.wrap{
+    position:relative;
+    width:300px;
+    height:300px;
+}
+.base{
+    width:100%;
+    height:100%;
+    background:#ccc;
+    opacity:0.3;
+    filter:alpha(opacity=30)
+}
+.one{
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:pink;
+    top:0;
+    left:0;
+    /*z-index:0;*/
+}
+.two{
+    width:80px;
+    height:80px;
+    background:deeppink;
+    position:relative;
+    top:10px;
+    left:10px;
+    /* z-index:0;*/
+}
+.three{
+    width:100px;
+    height:100px;
+    background:purple;
+    position:relative;
+    top:5px;
+    left:5px;
+    /*z-index:0;*/
+}
+.four{
+    width:100px;
+    height:100px;
+    background:green;
+}
+/*expamle2*/
+.con1{
+    position:relative;
+    width:100px;
+    height:100px;
+    background:greenyellow;
+}
+.incon1{
+    position:relative;
+    width:80px;
+    height:80px;
+    background:palegoldenrod
+}
+.sprite1{
+    width:50px;
+    height:150px;
+    background:pink;
+    position:absolute;
+    top:10px;
+    left:10px;
+}
+.con2{
+    position:relative;
+    width:100px;
+    height:100px;
+    border:10px solid palegreen;
+    margin-top:10px;
+}
+.sprite2{
+    width:20px;
+    height:110px;
+    background:palegoldenrod;
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:100
+}
+#example2_1 .con1{
+    *z-index:1
+}
+#example2_1 .sprite1{
+    z-index:1
+}
+
+#example2_2 .con1{
+    z-index:0
+}
+#example2_2 .con2{
+    z-index:0
+}
+
+#example2_3 .con1{
+    z-index:10
+}
+#example2_3 .con2{
+    z-index:11
+}
+#example2_3 .sprite1{
+    z-index:99
+}
+#example2_3 .sprite2{
+    z-index:0
+}
+
+.parent{
+    width:200px;
+    height:50px;
+    background:yellow;
+    position:relative;
+}
+.son{
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:green;
+}
+.around{
+    width:150px;
+    height:150px;
+    background:greenyellow;
+}
+#example3_2 .parent{
+    z-index:-1
+}
+#example3_2 .son{
+    z-index:10
+}
+
+#example3_3 .parent{
+    z-index:1
+}
+#example3_3 .son{
+    z-index:-10
+}
+
+.fixed{
+    width:300px;
+    height:50px;
+    background:purple;
+    position:fixed;
+    top:100px;
+    right:0
+}
+.assist1{
+    position:relative;
+    width:90%;
+    height:10px;
+    background:chartreuse;
+}
+.assist2{
+    position:absolute;
+    width:95%;
+    height:10px;
+    background:darkcyan;
+}
+.assist3{
+    margin-top:10px;
+    width:100%;
+    height:10px;
+    background:deepskyblue;
+}
