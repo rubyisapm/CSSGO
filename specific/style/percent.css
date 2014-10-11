@@ -1,0 +1,27 @@
+
+.box1{
+    width:5%;
+    height:5%;
+    background:greenyellow;
+    position:absolute;
+    top:50px;
+    left:200px
+}
+.box2{
+    width:50%;
+    height:50%;
+    background:blueviolet;
+    margin-top:100px;
+}
+.box3{
+    width:20%;
+    height:20%;
+    background:gold;
+    position:relative
+}
+
+#example1_2{
+    width:100px;
+    height:100px;
+    position:relative;
+}

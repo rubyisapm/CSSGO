@@ -4,26 +4,32 @@
     <meta charset="UTF-8">
     <title></title>
     <style type="text/css" rel="stylesheet">
-        #box1{
-            width:20%;
-            height:20%;
-            background:greenyellow;
-            position:absolute
+        #line1{
+            border-top:2px solid red;
+            border-bottom:2px solid green;
         }
-        #box2{
-            width:50%;
-            height:50%;
-            background:blueviolet;
-            margin-top:10px;
+        #line2{
+            background:mediumpurple;
+        }
+        #line3{
+            height:2px;
+            _font-size:0px;/*IE6! 如果定义了一个小的高度或0，在IE6下面该元素的高度仍为约17px*/
+            background:magenta;
+        }
+        #line4{
+            height:0;
+            background:yellow;
         }
     </style>
 </head>
 <body>
-<div id="box1">
-d
-</div>
-<div id="box2">
-d
-</div>
+<div id="line1"></div>
+<div id="line2"></div>
+<div id="line3"></div>
+<div id="line4"></div>
+<p>bug描述：<br/>
+    如果定义了一个小的高度或0，在IE6下面该元素的高度仍为约17px<br/>
+    也就是，高度要么不设置（那么IE6会不显示它），只要设置了，小值就不会让你那么称心了。
+</p>
 </body>
 </html>

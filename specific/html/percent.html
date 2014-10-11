@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/specific/style/public.css"/>
+    <link type="text/css" rel="stylesheet" href="/specific/style/percent.css"/>
+</head>
+<body>
+<p class="example">example1:百分比元素如何被渲染</p>
+<p class="subExample">example1_1</p>
+<div class="container" id="example1_1">
+    <div class="box1">定位元素</div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</div>
+<p class="summary">
+    1、此例中在元素外部加了一个div，该div上没有任何样式。其中有三个div（absolute/relative/non-positioned），且宽高皆为百分比定义。<br/>
+    2、absolute定位元素会以body为参照。除了IE6浏览器，其他浏览器都会按视口的尺寸计算定位元素的尺寸。<br/>
+    3、其他两个div在IE6/7下会显示为近似一行字的高度，而其他浏览器不会显示。
+</p>
+
+<div class="container" id="example1_2">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</div>
+<p class="summary">
+    1、当父元素明确地定义了宽高时，内部元素的百分比宽高得以展示出来。<br/>
+    2、此时在IE6中，absolute元素的高度仍然是一行字那么高。而其他浏览器会渲染成小正方形。
+</p>
+</body>
+</html>
